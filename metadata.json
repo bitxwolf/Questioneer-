@@ -1,0 +1,5 @@
+{
+  "name": "QUESTIONEER",
+  "description": "NCERT-based AI Question Paper Generator using DeepSeek R1 via OpenRouter",
+  "requestFramePermissions": []
+}

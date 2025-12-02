@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Markdown Content Styling */
+.prose h1 {
+  @apply text-xl font-bold mb-4 mt-6;
+}
+
+.prose h2 {
+  @apply text-lg font-semibold mb-3 mt-5 border-b border-gray-200 pb-1;
+}
+
+.prose h3 {
+  @apply text-base font-semibold mb-2 mt-4;
+}
+
+.prose p {
+  @apply mb-3 leading-relaxed text-gray-800;
+}
+
+.prose ul {
+  @apply list-disc list-inside mb-4 pl-4;
+}
+
+.prose ol {
+  @apply list-decimal list-inside mb-4 pl-4;
+}
+
+.prose strong {
+  @apply font-semibold text-gray-900;
+}
+
+/* Custom Scrollbar for panels */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e5e7eb;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d1d5db;
+}
+
+/* Critical Print Fixes for Single Page Apps */
+@media print {
+  @page {
+    margin: 1.5cm;
+    size: auto;
+  }
+  
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    background-color: white !important;
+  }
+
+  /* Reset all layout constraints that cause cut-off content */
+  html, body, #root {
+    height: auto !important;
+    overflow: visible !important;
+    width: 100% !important;
+    position: relative !important;
+  }
+
+  /* Hide everything by default */
+  body * {
+    visibility: hidden;
+  }
+
+  /* Only show the print container and its children */
+  .print-only, .print-only * {
+    visibility: visible;
+  }
+
+  /* Position the print container at the absolute top */
+  .print-only {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    height: auto !important;
+    display: block !important;
+  }
+
+  /* Force hide elements marked as no-print explicitly */
+  .no-print {
+    display: none !important;
+  }
+}
